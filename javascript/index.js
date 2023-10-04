@@ -115,6 +115,9 @@ obtainInstruction("steak", 0)
     document.querySelector("#steak").innerHTML += "<li>Steak is ready!</li>";
     document.querySelector("#steakImg").hidden = false;
     return step8;
+  })
+  .catch((error) => {
+    console.log("The error is: ", error);
   });
 
 // Iteration 3 using async/await
