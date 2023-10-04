@@ -62,6 +62,7 @@ getInstruction(
                     const step6 = (document.querySelector(
                       "#mashedPotatoes"
                     ).innerHTML += `<li>Mashed potatoes are ready!</li>`);
+                    document.querySelector("#mashedPotatoesImg").hidden = false;
                     return step6;
                   },
                   (error) => console.log(error)
@@ -112,6 +113,7 @@ obtainInstruction("steak", 0)
   })
   .then((step7) => {
     document.querySelector("#steak").innerHTML += "<li>Steak is ready!</li>";
+    document.querySelector("#steakImg").hidden = false;
     return step7;
   });
 
@@ -135,6 +137,7 @@ async function makeBroccoli() {
     const step7 = (document.querySelector(
       "#broccoli"
     ).innerHTML += `<li>Broccoli is ready!</li>`);
+    document.querySelector("#broccoliImg").hidden = false;
     return step7;
   } catch (error) {
     console.log("The error is: ", error);
@@ -186,6 +189,7 @@ async function prepBrusselsSprouts() {
         const step8 = (document.querySelector(
           "#brusselsSprouts"
         ).innerHTML += `<li>Brussels sprouts are ready!</li>`);
+        document.querySelector("#brusselsSproutsImg").hidden = false;
         return step8;
       }
     });
