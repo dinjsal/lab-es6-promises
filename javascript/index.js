@@ -83,62 +83,62 @@ getInstruction(
 
 // Iteration 2 - using promises
 obtainInstruction("steak", 0)
-  .then((step0) => {
-    document.querySelector("#steak").innerHTML += `<li>${step0}</li>`;
-    return obtainInstruction("steak", 1);
-  })
   .then((step1) => {
     document.querySelector("#steak").innerHTML += `<li>${step1}</li>`;
-    return obtainInstruction("steak", 2);
+    return obtainInstruction("steak", 1);
   })
   .then((step2) => {
     document.querySelector("#steak").innerHTML += `<li>${step2}</li>`;
-    return obtainInstruction("steak", 3);
+    return obtainInstruction("steak", 2);
   })
   .then((step3) => {
     document.querySelector("#steak").innerHTML += `<li>${step3}</li>`;
-    return obtainInstruction("steak", 4);
+    return obtainInstruction("steak", 3);
   })
   .then((step4) => {
     document.querySelector("#steak").innerHTML += `<li>${step4}</li>`;
-    return obtainInstruction("steak", 5);
+    return obtainInstruction("steak", 4);
   })
   .then((step5) => {
     document.querySelector("#steak").innerHTML += `<li>${step5}</li>`;
-    return obtainInstruction("steak", 6);
+    return obtainInstruction("steak", 5);
   })
   .then((step6) => {
     document.querySelector("#steak").innerHTML += `<li>${step6}</li>`;
-    return obtainInstruction("steak", 7);
+    return obtainInstruction("steak", 6);
   })
   .then((step7) => {
+    document.querySelector("#steak").innerHTML += `<li>${step7}</li>`;
+    return obtainInstruction("steak", 7);
+  })
+  .then((step8) => {
     document.querySelector("#steak").innerHTML += "<li>Steak is ready!</li>";
     document.querySelector("#steakImg").hidden = false;
-    return step7;
+    return step8;
   });
 
 // Iteration 3 using async/await
 async function makeBroccoli() {
   try {
-    const step0 = await obtainInstruction("broccoli", 0);
-    document.querySelector("#broccoli").innerHTML += `<li>${step0}</li>`;
-    const step1 = await obtainInstruction("broccoli", 1);
+    const step1 = await obtainInstruction("broccoli", 0);
     document.querySelector("#broccoli").innerHTML += `<li>${step1}</li>`;
-    const step2 = await obtainInstruction("broccoli", 2);
+    const step2 = await obtainInstruction("broccoli", 1);
     document.querySelector("#broccoli").innerHTML += `<li>${step2}</li>`;
-    const step3 = await obtainInstruction("broccoli", 3);
+    const step3 = await obtainInstruction("broccoli", 2);
     document.querySelector("#broccoli").innerHTML += `<li>${step3}</li>`;
-    const step4 = await obtainInstruction("broccoli", 4);
+    const step4 = await obtainInstruction("broccoli", 3);
     document.querySelector("#broccoli").innerHTML += `<li>${step4}</li>`;
-    const step5 = await obtainInstruction("broccoli", 5);
+    const step5 = await obtainInstruction("broccoli", 4);
     document.querySelector("#broccoli").innerHTML += `<li>${step5}</li>`;
-    const step6 = await obtainInstruction("broccoli", 6);
+    const step6 = await obtainInstruction("broccoli", 5);
     document.querySelector("#broccoli").innerHTML += `<li>${step6}</li>`;
-    const step7 = (document.querySelector(
+    const step7 = await obtainInstruction("broccoli", 6);
+    document.querySelector("#broccoli").innerHTML += `<li>${step7}</li>`;
+    const step8 = (document.querySelector(
       "#broccoli"
     ).innerHTML += `<li>Broccoli is ready!</li>`);
     document.querySelector("#broccoliImg").hidden = false;
-    return step7;
+    return step8;
   } catch (error) {
     console.log("The error is: ", error);
   }
@@ -148,22 +148,19 @@ makeBroccoli();
 // Bonus 2 - Promise all
 async function prepBrusselsSprouts() {
   try {
-    const step0 = await obtainInstruction("brusselsSprouts", 0);
-    const step1 = await obtainInstruction("brusselsSprouts", 1);
-    const step2 = await obtainInstruction("brusselsSprouts", 2);
-    const step3 = await obtainInstruction("brusselsSprouts", 3);
-    const step4 = await obtainInstruction("brusselsSprouts", 4);
-    const step5 = await obtainInstruction("brusselsSprouts", 5);
-    const step6 = await obtainInstruction("brusselsSprouts", 6);
-    const step7 = await obtainInstruction("brusselsSprouts", 7);
+    const step1 = await obtainInstruction("brusselsSprouts", 0);
+    const step2 = await obtainInstruction("brusselsSprouts", 1);
+    const step3 = await obtainInstruction("brusselsSprouts", 2);
+    const step4 = await obtainInstruction("brusselsSprouts", 3);
+    const step5 = await obtainInstruction("brusselsSprouts", 4);
+    const step6 = await obtainInstruction("brusselsSprouts", 5);
+    const step7 = await obtainInstruction("brusselsSprouts", 6);
+    const step8 = await obtainInstruction("brusselsSprouts", 7);
 
     Promise.all([
-      `${step0} ${step1} ${step2} ${step3} ${step4} ${step5} ${step6} ${step7}`,
+      `${step1} ${step2} ${step3} ${step4} ${step5} ${step6} ${step7} ${step8}`,
     ]).then((steps) => {
       for (const step of steps) {
-        document.querySelector(
-          "#brusselsSprouts"
-        ).innerHTML += `<li>${step0}</li>`;
         document.querySelector(
           "#brusselsSprouts"
         ).innerHTML += `<li>${step1}</li>`;
@@ -185,12 +182,15 @@ async function prepBrusselsSprouts() {
         document.querySelector(
           "#brusselsSprouts"
         ).innerHTML += `<li>${step7}</li>`;
+        document.querySelector(
+          "#brusselsSprouts"
+        ).innerHTML += `<li>${step8}</li>`;
 
-        const step8 = (document.querySelector(
+        const step9 = (document.querySelector(
           "#brusselsSprouts"
         ).innerHTML += `<li>Brussels sprouts are ready!</li>`);
         document.querySelector("#brusselsSproutsImg").hidden = false;
-        return step8;
+        return step9;
       }
     });
   } catch (error) {
