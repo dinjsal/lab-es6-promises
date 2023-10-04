@@ -59,17 +59,10 @@ getInstruction(
                     document.querySelector(
                       "#mashedPotatoes"
                     ).innerHTML += `<li>${step5}</li>`;
-                    // getInstruction(
-                    //   "mashedPotatoes",
-                    //   5,
-                    //   (step6) => {
-                    //     document.querySelector(
-                    //       "#mashedPotatoes"
-                    //     ).innerHTML += `<li>Mashed potatoes are ready!</li>`; //instruction does not exist
-                    //     return step6;
-                    //   },
-                    //   (error) => console.log(error)
-                    // );
+                    const step6 = (document.querySelector(
+                      "#mashedPotatoes"
+                    ).innerHTML += `<li>Mashed potatoes are ready!</li>`); //instruction does not exist
+                    return step6;
                   },
                   (error) => console.log(error)
                 );
@@ -85,6 +78,7 @@ getInstruction(
   },
   (error) => console.log(error)
 );
+(error) => console.log(error);
 
 // Iteration 2 - using promises
 obtainInstruction("steak", 0)
