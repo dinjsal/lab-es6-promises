@@ -122,10 +122,9 @@ obtainInstruction("steak", 0)
   });
 
 // Iteration 3 using async/await
-async function makeBroccoli(food, step) {
+async function makeBroccoli() {
   try {
-    await obtainInstruction("broccoli", 0);
-    console.log("Done");
+    const response1 = await obtainInstruction("broccoli", 0);
     await obtainInstruction("broccoli", 1);
     await obtainInstruction("broccoli", 2);
     await obtainInstruction("broccoli", 3);
@@ -139,4 +138,4 @@ async function makeBroccoli(food, step) {
 makeBroccoli();
 
 // Bonus 2 - Promise all
-// ...
+Promise.all;
