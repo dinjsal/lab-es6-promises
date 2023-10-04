@@ -61,7 +61,7 @@ getInstruction(
                     ).innerHTML += `<li>${step5}</li>`;
                     const step6 = (document.querySelector(
                       "#mashedPotatoes"
-                    ).innerHTML += `<li>Mashed potatoes are ready!</li>`); //instruction does not exist
+                    ).innerHTML += `<li>Mashed potatoes are ready!</li>`);
                     return step6;
                   },
                   (error) => console.log(error)
@@ -143,4 +143,55 @@ async function makeBroccoli() {
 makeBroccoli();
 
 // Bonus 2 - Promise all
-Promise.all;
+async function prepBrusselsSprouts() {
+  try {
+    const step0 = await obtainInstruction("brusselsSprouts", 0);
+    const step1 = await obtainInstruction("brusselsSprouts", 1);
+    const step2 = await obtainInstruction("brusselsSprouts", 2);
+    const step3 = await obtainInstruction("brusselsSprouts", 3);
+    const step4 = await obtainInstruction("brusselsSprouts", 4);
+    const step5 = await obtainInstruction("brusselsSprouts", 5);
+    const step6 = await obtainInstruction("brusselsSprouts", 6);
+    const step7 = await obtainInstruction("brusselsSprouts", 7);
+
+    Promise.all([
+      `${step0} ${step1} ${step2} ${step3} ${step4} ${step5} ${step6} ${step7}`,
+    ]).then((steps) => {
+      for (const step of steps) {
+        document.querySelector(
+          "#brusselsSprouts"
+        ).innerHTML += `<li>${step0}</li>`;
+        document.querySelector(
+          "#brusselsSprouts"
+        ).innerHTML += `<li>${step1}</li>`;
+        document.querySelector(
+          "#brusselsSprouts"
+        ).innerHTML += `<li>${step2}</li>`;
+        document.querySelector(
+          "#brusselsSprouts"
+        ).innerHTML += `<li>${step3}</li>`;
+        document.querySelector(
+          "#brusselsSprouts"
+        ).innerHTML += `<li>${step4}</li>`;
+        document.querySelector(
+          "#brusselsSprouts"
+        ).innerHTML += `<li>${step5}</li>`;
+        document.querySelector(
+          "#brusselsSprouts"
+        ).innerHTML += `<li>${step6}</li>`;
+        document.querySelector(
+          "#brusselsSprouts"
+        ).innerHTML += `<li>${step7}</li>`;
+
+        const step8 = (document.querySelector(
+          "#brusselsSprouts"
+        ).innerHTML += `<li>Brussels sprouts are ready!</li>`);
+        return step8;
+      }
+    });
+  } catch (error) {
+    console.log("The error is: ", error);
+  }
+}
+
+prepBrusselsSprouts();
